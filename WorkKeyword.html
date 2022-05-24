@@ -1,0 +1,35 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            var x = 10;//global scope
+            const pi = 3.14;
+            function test1()
+            {
+                var x = 20;
+                const pi = 3.15;
+                console.log("insidde the test1 "+pi);
+            }
+            function test2() {
+                let z = 30;//function scope
+                const max = 50;
+                console.log("insidde the test2 " + pi);
+            }
+            console.log("outside the function " + x);
+            {
+                let y = 30;//block scope
+                const max = 3000;//block scope
+                console.log("inside a block "+max);
+            }
+            {
+                var y = 20;//global scope
+            }
+            test1();
+            test2();
+
+
+        </script>
+    </body>
+</html>

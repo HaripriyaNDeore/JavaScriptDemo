@@ -1,0 +1,44 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+    <body>
+        <div id="d1"></div>
+        <div id="d2"></div>
+        <script>
+            function displaySuccess(data) {
+                let text = "<table class='table'><tr><th>Id</th><th>Title</th><th>Description</th><th>Price</th></tr>"
+                for (let [key, value] of Object.entries(data))
+                {
+                    text += "<tr><td>" + value.id + "</td><td>" + value.id + "</td><td>" + value.id + "</td></tr>";
+                }
+                text += "</table>";
+                document.getElementById("d1").innerHTML = data;
+            }
+            function displayError(data) {
+                document.getElementById("d2").innerHTML = data;
+            }
+            var promise = new Promise(function (resolve, reject) {
+                let r = new XMLHttpRequest();
+                r.open('GET', "https://dummyjson.com/products/");
+                r.onload = function () {
+                    if (r.status = 200) { // 200 is http status code
+                        resolve(r.response);
+                    }
+                    else {
+                        reject("Not able to load file");
+                    }
+                };
+                r.send();
+            });
+
+            promise.then(function (value) {
+                displaySuccess(value);
+            }).catch(function (error) {
+                displayerror(error);
+            });
+
+        </script>
+    </body>
+</html>

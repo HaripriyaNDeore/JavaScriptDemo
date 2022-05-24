@@ -1,0 +1,54 @@
+
+<html>
+<head>
+
+</head>
+<body>
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <div id="d3"></div>
+    <div id="d4"></div>
+    <script>
+        //Array
+        var city = ["Pune", "Nashik", "Mumbai", "Aurangabad"]
+
+        console.log(city);
+        //it will print list ABCD
+        var data = "<ol type='A'>";
+        for (let i = 0; i < city.length; i++) {
+            data += "<li>" + city[i] + "</li>";
+        }
+        data += "</ol>";
+        console.log(data);
+        document.getElementById("d1").innerHTML = data;
+        //it will print list 123 order
+        var data1 = "<ol type='1'>";
+        for (let i = 0; i < city.length; i++) {
+            data1 += "<li>" + city[i] + "</li>";
+        }
+        data1 += "</ol>";
+        console.log(data1);
+        document.getElementById("d2").innerHTML = data1;
+
+        //it will print list abcd order
+        var data4 = "<ol type='a'>";
+        for (let i = 0; i < city.length; i++) {
+            data4 += "<li>" + city[i] + "</li>";
+        }
+        data4 += "</ol>";
+        console.log(data4);
+        document.getElementById("d3").innerHTML = data4;
+
+        //it will print list o
+        var data5 = "<ul>";
+        for (let i = 0; i < city.length; i++) {
+            data5 += "<li>" + city[i] + "</li>";
+        }
+        data5 += "</ul>";
+        console.log(data5);
+        document.getElementById("d4").innerHTML = data5;
+              //  console.log(arr);
+
+    </script>
+</body>
+</html>

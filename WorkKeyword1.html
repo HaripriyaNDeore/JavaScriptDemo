@@ -1,0 +1,53 @@
+<html>
+    <head>
+        Keyword Var,const let
+    </head>
+    <body>
+        <div id="d1"></div>
+        <script>
+            var x = 10;
+            const pi = 3.14;
+            function t1() {
+                var x = 20;
+                const pi = 3.15;
+                console.log("inside the t1 " + x);
+                console.log("inside the t1 " + pi);
+            }
+            function t2() {
+                let z = 333;
+                console.log("inside the t2 " + z);
+                console.log("inside the t2 access t1" + x);
+                console.log("inside the t2 access t1" + pi);
+            }
+            //console.log("outside t2 function " + z); not access let keyword outside the function
+            console.log("outside t1 function " + x);
+            console.log("outside t1 function " + pi);
+            t1();
+            t2();
+
+            //splice function
+            var colors = ["red", "blue", "green", "white"];
+
+
+            const spli = colors.splice(3, 0, "white", "pink");
+           // console.log(spli);
+            const colorCopy = colors.slice(1, 4);
+            colors.sort();//work with only string not for number
+            colors.reverse();
+            var data = " ";
+            var data = "<ul>";
+            for (let i = 0; i < colors.length; i++) {
+                data += "<li>" + colors[i] + "</li>";
+            }
+            data += "</ul>";
+            console.log(data);
+            document.getElementById("d1").innerHTML = data;
+
+
+
+
+
+
+        </script>
+    </body>
+</html>
