@@ -1,0 +1,31 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div id="parent">
+            <button type="button" class="btn btn-primary">Parent</button>
+            <div id="child">
+                <button type="button">Child</button>
+            </div>
+        </div>
+
+        <script>
+
+            //bubbling and capturing in javascript
+            document.getElementById("parent").addEventListener("click", function () {
+                alert("inside parent");
+            }, true);
+
+            document.getElementById("child").addEventListener("click", function () {
+                alert("inside child");
+            }, false);
+        </script>
+    </body>
+</html>
+<!--bubbling means bottom to top approch 
+    capturing means top to bottom aprroch-->
+
+
+<!-- working on arrow function in javascript
+    sample code using arrow function and implement it-->
